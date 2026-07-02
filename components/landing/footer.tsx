@@ -5,17 +5,14 @@ export function Footer() {
     <footer className="py-8 bg-foreground text-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4">
-          <div className="relative h-[60px] w-[60px] bg-white rounded-lg p-1">
+          <div className="relative h-[70px] w-[160px]">
             <Image
-              src="/images/logo.jpeg"
-              alt="CV Remodeling & Outdoor Living Logo"
+              src="/images/nexroof-logo.png"
+              alt="NexRoof Roofing & Exteriors Logo"
               fill
-              className="object-contain"
+              className="object-contain brightness-0 invert"
             />
           </div>
-          <p className="font-serif text-xl font-semibold">
-            CV Remodeling & Outdoor Living
-          </p>
           <p className="text-background/70 text-sm">
             &copy; {new Date().getFullYear()} All rights reserved. Licensed & Insured.
           </p>

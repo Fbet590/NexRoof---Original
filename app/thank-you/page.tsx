@@ -15,18 +15,15 @@ export default function ThankYouPage() {
       {/* Header */}
       <header className="bg-card border-b border-border py-4">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-3">
-            <div className="relative h-12 w-12">
+          <div className="flex items-center justify-center">
+            <div className="relative h-[60px] w-[160px]">
               <Image
-                src="/images/logo.png"
-                alt="CV Remodeling & Outdoor Living Logo"
+                src="/images/nexroof-logo.png"
+                alt="NexRoof Roofing & Exteriors Logo"
                 fill
                 className="object-contain"
               />
             </div>
-            <span className="font-serif font-semibold text-foreground text-lg">
-              CV Remodeling & Outdoor Living
-            </span>
           </div>
         </div>
       </header>
