@@ -23,7 +23,7 @@ export function Navbar() {
               />
             </div>
             <span className="font-serif font-semibold text-foreground text-sm md:text-base hidden sm:block">
-              CV Remodeling & Outdoor Living
+              NexRoof Roofing & Exteriors
             </span>
           </div>
           
