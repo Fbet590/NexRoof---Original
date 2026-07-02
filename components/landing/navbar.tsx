@@ -10,21 +10,17 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 bg-white/93">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-3">
-            <div className="relative h-[54px] w-[54px] md:h-[62px] md:w-[62px]">
+            <div className="relative h-[54px] w-[120px] md:h-[62px] md:w-[140px]">
               <Image
-                src="/images/logo.png"
-                alt="CV Remodeling & Outdoor Living Logo"
+                src="/images/nexroof-logo.png"
+                alt="NexRoof Roofing & Exteriors Logo"
                 fill
                 className="object-contain"
-                style={{ filter: 'drop-shadow(0 0 0 transparent)' }}
               />
             </div>
-            <span className="font-serif font-semibold text-foreground text-sm md:text-base hidden sm:block">
-              CV Remodeling & Outdoor Living
-            </span>
           </div>
           
           <Button 
