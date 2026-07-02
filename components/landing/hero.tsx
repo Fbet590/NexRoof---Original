@@ -23,7 +23,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl">
         <h1 className="font-[family-name:var(--font-poppins)] text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance">
-          $15K Flat. New Kitchen. Cabinets, Countertops & Appliances Included. Done.
+          $15K Flat. New Roof. Cabinets, Countertops & Appliances Included. Done.
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
           We handle everything from design to install — you just enjoy the result.
@@ -31,7 +31,8 @@ export function Hero() {
         <Button 
           size="lg" 
           onClick={scrollToForm}
-          className="bg-primary hover:bg-primary/90 text-primary-foreground text-xl px-8 py-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+          className="text-primary-foreground text-xl px-8 py-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+          style={{ backgroundColor: '#526184' }}
         >
           Start Your Free Estimate
         </Button>
