@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ChevronLeft, ChevronRight, Check } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const steps = [
@@ -52,19 +52,6 @@ export function QuoteForm() {
 
   const step = steps[currentStep]
   const progress = ((currentStep + 1) / steps.length) * 100
-
-  const handleOptionSelect = (option: string) => {
-    if (step.type === "multi") {
-      const current = (answers[currentStep] as string[]) || []
-      if (current.includes(option)) {
-        setAnswers({ ...answers, [currentStep]: current.filter(o => o !== option) })
-      } else {
-        setAnswers({ ...answers, [currentStep]: [...current, option] })
-      }
-    } else {
-      setAnswers({ ...answers, [currentStep]: option })
-    }
-  }
 
   const handleInputChange = (value: string) => {
     // Format phone number as user types
@@ -192,52 +179,21 @@ export function QuoteForm() {
 
           {/* Options or Input */}
           <div className="space-y-3 mb-8">
-            {step.type === "single" || step.type === "multi" ? (
-              step.options?.map((option) => {
-                const isSelected = step.type === "multi"
-                  ? ((answers[currentStep] as string[]) || []).includes(option)
-                  : answers[currentStep] === option
-
-                return (
-                  <button
-                    key={option}
-                    onClick={() => handleOptionSelect(option)}
-                    className={cn(
-                      "w-full p-4 rounded-lg border-2 text-left transition-all",
-                      isSelected
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border bg-background hover:border-primary/50 text-foreground"
-                    )}
-                  >
-                    <span className="flex items-center gap-3">
-                      <span className={cn(
-                        "w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0",
-                        isSelected ? "border-primary bg-primary" : "border-muted-foreground"
-                      )}>
-                        {isSelected && <Check className="w-3 h-3 text-primary-foreground" />}
-                      </span>
-                      {option}
-                    </span>
-                  </button>
-                )
-              })
-            ) : (
-              <div className="space-y-2">
-                <Input
-                  type={step.type === "tel" ? "text" : step.type}
-                  placeholder={step.placeholder}
-                  value={(answers[currentStep] as string) || ""}
-                  onChange={(e) => handleInputChange(e.target.value)}
-                  className={cn(
-                    "w-full p-4 text-lg",
-                    errors[currentStep] && "border-destructive focus-visible:ring-destructive"
-                  )}
-                />
-                {errors[currentStep] && (
-                  <p className="text-sm text-destructive">{errors[currentStep]}</p>
+            <div className="space-y-2">
+              <Input
+                type={step.type === "tel" ? "text" : step.type}
+                placeholder={step.placeholder}
+                value={(answers[currentStep] as string) || ""}
+                onChange={(e) => handleInputChange(e.target.value)}
+                className={cn(
+                  "w-full p-4 text-lg",
+                  errors[currentStep] && "border-destructive focus-visible:ring-destructive"
                 )}
-              </div>
-            )}
+              />
+              {errors[currentStep] && (
+                <p className="text-sm text-destructive">{errors[currentStep]}</p>
+              )}
+            </div>
           </div>
 
           {/* Navigation */}

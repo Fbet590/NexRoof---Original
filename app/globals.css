@@ -10,7 +10,7 @@
   --card-foreground: oklch(0.25 0.03 230);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.03 230);
-  --primary: oklch(0.45 0.12 230);
+  --primary: oklch(0.60 0.19 188);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.96 0.01 230);
   --secondary-foreground: oklch(0.25 0.03 230);
@@ -46,8 +46,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.60 0.19 188);
+  --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -76,7 +76,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-serif: Georgia, serif;
   --font-poppins: var(--font-poppins), 'Poppins', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);

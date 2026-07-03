@@ -82,7 +82,7 @@ const galleryImages: GalleryItem[] = [
 
 ]
 
-function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void }) {
+function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: (slideIndex: number) => void }) {
   const isSlideshow = Array.isArray(image.src)
   const slides = isSlideshow ? (image.src as string[]) : [image.src as string]
   const [slideIndex, setSlideIndex] = useState(0)
@@ -101,7 +101,7 @@ function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void
     <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
       <div className="relative aspect-[4/3] w-full overflow-hidden group">
         <button
-          onClick={onOpen}
+          onClick={() => onOpen(slideIndex)}
           className="absolute inset-0 w-full h-full cursor-pointer"
           aria-label={`Open ${image.title}`}
         >
@@ -162,17 +162,19 @@ function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void
 
 function Lightbox({
   item,
+  slideIndex,
   onClose,
   onPrev,
   onNext,
 }: {
   item: GalleryItem
+  slideIndex: number
   onClose: () => void
   onPrev: () => void
   onNext: () => void
 }) {
   const slides = Array.isArray(item.src) ? item.src : [item.src]
-  const firstSlide = slides[0]
+  const activeSrc = slides[slideIndex] ?? slides[0]
 
   return (
     <div
@@ -200,7 +202,7 @@ function Lightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <Image
-          src={firstSlide}
+          src={activeSrc}
           alt={item.alt}
           fill
           className="object-contain"
@@ -220,20 +222,26 @@ function Lightbox({
 
 export function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [lightboxSlide, setLightboxSlide] = useState(0)
 
-  const openLightbox = (index: number) => setSelectedIndex(index)
+  const openLightbox = (index: number, slideIndex: number) => {
+    setSelectedIndex(index)
+    setLightboxSlide(slideIndex)
+  }
   const closeLightbox = () => setSelectedIndex(null)
 
   const goToPrevious = () => {
     setSelectedIndex((prev) =>
       prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1
     )
+    setLightboxSlide(0)
   }
 
   const goToNext = () => {
     setSelectedIndex((prev) =>
       prev === null ? null : prev === galleryImages.length - 1 ? 0 : prev + 1
     )
+    setLightboxSlide(0)
   }
 
   const selectedItem = selectedIndex !== null ? galleryImages[selectedIndex] : null
@@ -252,7 +260,7 @@ export function Gallery() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
-            <GalleryCard key={index} image={image} onOpen={() => openLightbox(index)} />
+            <GalleryCard key={index} image={image} onOpen={(slideIndex) => openLightbox(index, slideIndex)} />
           ))}
         </div>
       </div>
@@ -260,6 +268,7 @@ export function Gallery() {
       {selectedItem !== null && (
         <Lightbox
           item={selectedItem}
+          slideIndex={lightboxSlide}
           onClose={closeLightbox}
           onPrev={goToPrevious}
           onNext={goToNext}
