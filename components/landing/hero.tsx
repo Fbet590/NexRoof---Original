@@ -14,7 +14,7 @@ export function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/hero-kitchen.jpg')"
+          backgroundImage: "url('/images/hero-bg.jpeg')"
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
@@ -23,10 +23,10 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl">
         <h1 className="font-[family-name:var(--font-poppins)] text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance">
-          $10K Flat. New Roof. Cabinets, Countertops & Appliances Included. Done.
+          $10K Flat. New Roof. 160MPH Warranty, Life Time Warranty. Done.
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-          We handle everything from design to install — you just enjoy the result.
+          We handle everything from leaks to entire repalcements — you just enjoy the result.
         </p>
         <Button 
           size="lg" 
@@ -41,15 +41,15 @@ export function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-6 mt-8 mb-8 md:mb-0">
           <div className="flex items-center gap-2 text-white/80">
             <Shield className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium">Licensed & Insured</span>
+            <span className="text-base font-semibold">Licensed & Insured</span>
           </div>
           <div className="flex items-center gap-2 text-white/80">
             <Clock className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium">On-Time Guarantee</span>
+            <span className="text-base font-semibold">On-Time Guarantee</span>
           </div>
           <div className="flex items-center gap-2 text-white/80">
             <Award className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium">5-Star Rated</span>
+            <span className="text-base font-semibold">5-Star Rated</span>
           </div>
         </div>
       </div>

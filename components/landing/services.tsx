@@ -33,7 +33,8 @@ export function Services() {
           <Button 
             size="lg" 
             onClick={scrollToForm}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold"
+            className="text-primary-foreground px-8 py-6 text-lg font-semibold"
+            style={{ backgroundColor: '#526184' }}
           >
             Get a Free Quote
           </Button>
