@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button"
 
 const services = [
   {
-    title: "Kitchen",
-    description: "Get a kitchen built with premium materials and expert craftsmanship delivered on time, without the usual renovation delays.",
+    title: "Full Roof Replacement",
+    description: "Get a brand-new roof built with top-tier, 160MPH wind-rated materials and expert craftsmanship, installed on our flat $10K price with no surprise costs.",
     image: "/images/kitchen-service.jpg"
   },
   {
-    title: "Bathroom",
-    description: "We remodel bathrooms using durable, high-end finishes installed quickly and professionally, so you can enjoy your new space sooner.",
+    title: "Roof Repair",
+    description: "From storm damage to persistent leaks, we diagnose the real problem and fix it right the first time — fast, honest, and fairly priced.",
     image: "/images/bathroom-service.jpg"
   }
 ]
@@ -25,10 +25,10 @@ export function Services() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
           <p className="text-primary font-semibold mb-2">
-            Ready to Reimagine Your Home&apos;s Interior?
+            Ready to Protect Your Home?
           </p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Expert Contractor Services
+            Our Expert Roofing Services
           </h2>
           <Button 
             size="lg" 
@@ -64,13 +64,13 @@ export function Services() {
 
         <div className="mt-16 text-center">
           <p className="text-primary font-semibold mb-2">
-            Ready to Reimagine Your Indoor Space?
+            Ready to Upgrade Your Roof?
           </p>
           <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Our Expert Contractor Services
+            Our Expert Roofing Services
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Our expert team is ready to handle projects of all sizes and complexities, always ensuring meticulous craftsmanship, clear communication, and results that exceed your expectations.
+            Our expert team is ready to handle roofs of all sizes and complexities, always ensuring meticulous craftsmanship, clear communication, and results that exceed your expectations.
           </p>
         </div>
       </div>

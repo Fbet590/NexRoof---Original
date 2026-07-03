@@ -7,45 +7,45 @@ import { X, ChevronLeft, ChevronRight, MapPin } from "lucide-react"
 const galleryImages = [
   {
     src: "/images/gallery-1.jpg",
-    alt: "Modern kitchen renovation with white cabinets and marble countertops",
-    title: "Modern Kitchen Remodel",
-    description: "Custom white shaker cabinets with marble countertops and subway tile backsplash",
-    city: "Scottsdale, AZ"
+    alt: "Full roof replacement with 160MPH wind-rated architectural shingles on a single-family home",
+    title: "Full Roof Replacement",
+    description: "160MPH wind-rated architectural shingles installed on a 1,850 sq ft single-family home.",
+    city: "Tampa, FL"
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "Luxurious bathroom remodel with walk-in shower",
-    title: "Luxury Walk-In Shower",
-    description: "Frameless glass enclosure with rainfall showerhead and white marble tiles",
-    city: "Phoenix, AZ"
+    alt: "Post-hurricane storm damage repair with impact-resistant shingles and flashing replacement",
+    title: "Storm Damage Repair",
+    description: "Post-hurricane repair with impact-resistant shingles and full flashing replacement.",
+    city: "Brandon, FL"
   },
   {
     src: "/images/gallery-3.jpg",
-    alt: "Custom kitchen island with pendant lighting",
-    title: "Custom Kitchen Island",
-    description: "Waterfall quartz countertop with modern pendant lighting and bar seating",
-    city: "Tempe, AZ"
+    alt: "Complete tear-off and reroof with Class 4 impact-resistant shingles and new underlayment",
+    title: "Complete Tear-Off & Reroof",
+    description: "18-year-old roof replaced with Class 4 impact-resistant shingles and new underlayment.",
+    city: "Clearwater, FL"
   },
   {
     src: "/images/gallery-4.jpg",
-    alt: "Elegant master bathroom with soaking tub",
-    title: "Master Bath Retreat",
-    description: "Freestanding soaking tub with double vanity and natural stone finishes",
-    city: "Mesa, AZ"
+    alt: "Leak repair and roof restoration with corrected flashing and full inspection",
+    title: "Leak Repair & Roof Restoration",
+    description: "Diagnosed and repaired a multi-year leak with corrected flashing and full inspection.",
+    city: "Riverview, FL"
   },
   {
     src: "/images/gallery-5.jpg",
-    alt: "Contemporary kitchen with stainless steel appliances",
-    title: "Contemporary Kitchen",
-    description: "Navy blue cabinets with gold hardware and professional-grade appliances",
-    city: "Gilbert, AZ"
+    alt: "Hurricane-resistant reroof with architectural shingles rated for high-wind Florida climates",
+    title: "Hurricane-Resistant Reroof",
+    description: "Full replacement with architectural shingles rated for high-wind Florida climates.",
+    city: "Wesley Chapel, FL"
   },
   {
     src: "/images/gallery-6.jpg",
-    alt: "Spa-inspired bathroom renovation",
-    title: "Spa-Inspired Bathroom",
-    description: "Neutral tones with stone accent wall and floating vanity",
-    city: "Chandler, AZ"
+    alt: "Flat roof section replacement with premium materials and professional finish",
+    title: "Flat Roof Section Replacement",
+    description: "Aging flat roof section replaced with premium materials and clean, professional finish.",
+    city: "Land O' Lakes, FL"
   }
 ]
 
@@ -75,7 +75,7 @@ export function Gallery() {
             Our Recent Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Browse through some of our stunning kitchen and bathroom transformations
+            Browse through some of our recent roof replacements and repairs
           </p>
         </div>
 
