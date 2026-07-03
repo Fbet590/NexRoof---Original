@@ -76,7 +76,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-serif: Georgia, serif;
   --font-poppins: var(--font-poppins), 'Poppins', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);

@@ -1,15 +1,8 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
-
-const cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: '--font-cormorant',
-  display: 'swap'
-});
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -25,26 +18,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'CV Remodeling & Outdoor Living - Expert Kitchen & Bathroom Remodeling',
-  description: '30+ years of expert kitchen and bathroom remodeling. Quality craftsmanship, on time, on budget. Get your free quote today!',
+  title: 'NexRoof — $10K Flat-Rate Roof Replacement | Licensed & Insured',
+  description: 'NexRoof offers a $10K flat-rate full roof replacement with 160MPH wind-rated architectural shingles, lifetime warranty, and zero hidden costs. Serving Tampa Bay & surrounding areas.',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export default function RootLayout({
@@ -53,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background">
       <head>
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
@@ -79,7 +55,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className={`${cormorant.variable} ${inter.variable} ${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

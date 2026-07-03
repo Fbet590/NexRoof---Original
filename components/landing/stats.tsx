@@ -9,6 +9,8 @@ function AnimatedCounter({ end, suffix = "" }: { end: number; suffix?: string })
   const hasAnimated = useRef(false)
 
   useEffect(() => {
+    let timer: ReturnType<typeof setInterval> | null = null
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated.current) {
@@ -16,12 +18,12 @@ function AnimatedCounter({ end, suffix = "" }: { end: number; suffix?: string })
           let start = 0
           const duration = 2000
           const increment = end / (duration / 16)
-          
-          const timer = setInterval(() => {
+
+          timer = setInterval(() => {
             start += increment
             if (start >= end) {
               setCount(end)
-              clearInterval(timer)
+              if (timer) clearInterval(timer)
             } else {
               setCount(Math.floor(start))
             }
@@ -35,7 +37,10 @@ function AnimatedCounter({ end, suffix = "" }: { end: number; suffix?: string })
       observer.observe(ref.current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      if (timer) clearInterval(timer)
+    }
   }, [end])
 
   return (

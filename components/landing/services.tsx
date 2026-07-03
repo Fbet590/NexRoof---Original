@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const services = [
@@ -46,10 +47,15 @@ export function Services() {
               key={service.title}
               className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div 
-                className="h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url('${service.image}')` }}
-              />
+              <div className="relative h-64 w-full">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="font-[family-name:var(--font-poppins)] text-2xl font-bold text-card-foreground mb-3">
                   {service.title}

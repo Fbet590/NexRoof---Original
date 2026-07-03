@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Shield, Clock, Award } from "lucide-react"
 
@@ -10,13 +11,16 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-40">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/hero-bg.jpeg')"
-        }}
-      >
+      {/* Background Image — priority loads as LCP element */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpeg"
+          alt="Aerial view of a newly installed roof by NexRoof"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={85}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       </div>
 
