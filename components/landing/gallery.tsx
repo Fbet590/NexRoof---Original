@@ -27,7 +27,12 @@ const galleryImages: GalleryItem[] = [
     city: "Tampa, FL"
   },
   {
-    src: "/images/gallery-2.jpg",
+    src: [
+      "/images/gallery-storm-2a.webp",
+      "/images/gallery-storm-2b.webp",
+      "/images/gallery-storm-2c.webp",
+      "/images/gallery-storm-2d.webp",
+    ],
     alt: "Post-hurricane storm damage repair with impact-resistant shingles and flashing replacement",
     title: "Storm Damage Repair",
     description: "Post-hurricane repair with impact-resistant shingles and full flashing replacement.",
