@@ -9,6 +9,16 @@ import { cn } from "@/lib/utils"
 
 const steps = [
   {
+    title: "Are you the homeowner?",
+    type: "single",
+    options: ["No, I'm a Renter", "Yes, I'm the Owner"]
+  },
+  {
+    title: "What service do you need?",
+    type: "single",
+    options: ["Roof Replacement", "Roof Repair", "Not Sure"]
+  },
+  {
     title: "Enter your name:",
     type: "text",
     placeholder: "Your full name"
@@ -52,6 +62,16 @@ export function QuoteForm() {
 
   const step = steps[currentStep]
   const progress = ((currentStep + 1) / steps.length) * 100
+
+  const handleOptionSelect = (option: string) => {
+    setAnswers({ ...answers, [currentStep]: option })
+    // Auto-advance to the next step after a brief pause for visual feedback
+    if (currentStep < steps.length - 1) {
+      setTimeout(() => {
+        setCurrentStep((prev) => (prev < steps.length - 1 ? prev + 1 : prev))
+      }, 200)
+    }
+  }
 
   const handleInputChange = (value: string) => {
     // Format phone number as user types
@@ -115,9 +135,11 @@ export function QuoteForm() {
     
     // Prepare form data for webhook
     const formData = {
-      name: answers[0],
-      email: answers[1],
-      phone: answers[2],
+      homeowner: answers[0],
+      service: answers[1],
+      name: answers[2],
+      email: answers[3],
+      phone: answers[4],
       submitted_at: new Date().toISOString(),
       event_id: eventId
     }
@@ -179,21 +201,42 @@ export function QuoteForm() {
 
           {/* Options or Input */}
           <div className="space-y-3 mb-8">
-            <div className="space-y-2">
-              <Input
-                type={step.type === "tel" ? "text" : step.type}
-                placeholder={step.placeholder}
-                value={(answers[currentStep] as string) || ""}
-                onChange={(e) => handleInputChange(e.target.value)}
-                className={cn(
-                  "w-full p-4 text-lg",
-                  errors[currentStep] && "border-destructive focus-visible:ring-destructive"
+            {step.type === "single" ? (
+              step.options?.map((option) => {
+                const isSelected = answers[currentStep] === option
+                return (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => handleOptionSelect(option)}
+                    className={cn(
+                      "w-full p-4 rounded-lg border-2 text-left text-lg transition-all min-h-[44px]",
+                      isSelected
+                        ? "border-primary bg-primary/10 text-card-foreground"
+                        : "border-border bg-background hover:border-primary/50 text-card-foreground"
+                    )}
+                  >
+                    {option}
+                  </button>
+                )
+              })
+            ) : (
+              <div className="space-y-2">
+                <Input
+                  type={step.type === "tel" ? "text" : step.type}
+                  placeholder={step.placeholder}
+                  value={(answers[currentStep] as string) || ""}
+                  onChange={(e) => handleInputChange(e.target.value)}
+                  className={cn(
+                    "w-full p-4 text-lg",
+                    errors[currentStep] && "border-destructive focus-visible:ring-destructive"
+                  )}
+                />
+                {errors[currentStep] && (
+                  <p className="text-sm text-destructive">{errors[currentStep]}</p>
                 )}
-              />
-              {errors[currentStep] && (
-                <p className="text-sm text-destructive">{errors[currentStep]}</p>
-              )}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Navigation */}
