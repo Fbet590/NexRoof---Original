@@ -41,7 +41,21 @@ export async function POST(request: Request) {
   try {
     const formData = await request.json()
 
+    // Renters are not qualified leads — they still get the thank-you message,
+    // but we filter them out and never forward them to the CRM/automation webhooks.
+    const isRenter =
+      typeof formData.homeowner === 'string' &&
+      formData.homeowner.toLowerCase().includes('renter')
+
+    if (isRenter) {
+      // Do not forward to LeadConnector or Zapier. Return success so the
+      // client still shows the thank-you page.
+      return NextResponse.json({ success: true, qualified: false })
+    }
+
     const payload = {
+      homeowner: formData.homeowner,
+      service: formData.service,
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -64,7 +78,7 @@ export async function POST(request: Request) {
     }
 
     // Always return success to the client so the user is not blocked
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, qualified: true })
   } catch (error) {
     console.error('Submit lead error:', error)
     return NextResponse.json({ success: false, error: 'Failed to submit' }, { status: 500 })
