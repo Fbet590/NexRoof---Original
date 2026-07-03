@@ -2,21 +2,63 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    location: "Scottsdale, AZ",
-    text: "CV Remodeling & Outdoor Living transformed our outdated kitchen into a stunning modern space. The team was professional, communicated every step, and finished on time. We couldn't be happier!",
+    name: "Marcus T.",
+    location: "Tampa, FL",
+    text: "After Hurricane Idalia did a number on our roof, NexRoof came out fast and replaced the entire thing with impact-rated shingles rated for 160MPH winds. The crew was clean, efficient, and finished in two days. No leaks, no issues — and the lifetime warranty gave us real peace of mind going into storm season.",
     rating: 5
   },
   {
-    name: "Michael R.",
-    location: "Phoenix, AZ",
-    text: "After getting quotes from several contractors, we chose CV for their transparency and expertise. Our bathroom renovation exceeded expectations. Highly recommend!",
+    name: "Diana F.",
+    location: "Brandon, FL",
+    text: "Our 18-year-old roof was curling and losing granules every time it rained. NexRoof did a full replacement with Class 4 shingles and the difference is night and day. Solid craftsmanship, great communication throughout, and they left the yard cleaner than they found it. Highly recommend.",
     rating: 5
   },
   {
-    name: "Jennifer L.",
-    location: "Tempe, AZ",
-    text: "The attention to detail was incredible. They helped us select the perfect materials within our budget and the craftsmanship is top-notch. A truly professional experience.",
+    name: "Kevin O.",
+    location: "Riverview, FL",
+    text: "Had a persistent leak above our master bedroom for two years. Two other roofers patched it and it still came back. NexRoof diagnosed the real problem — a failed valley flashing — fixed it properly, and it has not leaked since. Quick, honest, and fairly priced.",
+    rating: 5
+  },
+  {
+    name: "Stephanie R.",
+    location: "Clearwater, FL",
+    text: "Full roof replacement done right. They installed hurricane-resistant architectural shingles with a lifetime transferable warranty. The project manager kept us updated daily and the final result looks incredible. Worth every penny.",
+    rating: 5
+  },
+  {
+    name: "James W.",
+    location: "Wesley Chapel, FL",
+    text: "Storm took out a large section of our roof. NexRoof tarped it the same day, worked directly with our insurance adjuster, and had a brand new roof on within a week. Top-tier materials, zero shortcuts. These guys are the real deal.",
+    rating: 5
+  },
+  {
+    name: "Linda C.",
+    location: "St. Petersburg, FL",
+    text: "I was skeptical about the $10K flat-rate offer but everything they promised was delivered. New roof, high-wind-rated shingles, proper underlayment, and a full cleanup. No hidden fees, no upsells. Just a beautiful new roof.",
+    rating: 5
+  },
+  {
+    name: "Tony M.",
+    location: "Lutz, FL",
+    text: "Great experience from start to finish. Our roof was 22 years old and NexRoof replaced it with durable, wind-resistant shingles built for Florida weather. The crew worked hard even in the heat and wrapped up faster than expected.",
+    rating: 4
+  },
+  {
+    name: "Rachel B.",
+    location: "Valrico, FL",
+    text: "Minor repair turned out to be a bigger issue than expected, but NexRoof was upfront about it and gave us options. We went with the full replacement and could not be happier. The new shingles look great and the lifetime durability warranty is a huge bonus.",
+    rating: 5
+  },
+  {
+    name: "Carlos H.",
+    location: "Land O' Lakes, FL",
+    text: "They replaced my aging flat roof section and the two sloped sections in one visit. Professional team, premium materials, and clean work. Our homeowner's insurance even lowered our premium because of the storm-rated shingles they installed.",
+    rating: 5
+  },
+  {
+    name: "Michelle G.",
+    location: "Carrollwood, FL",
+    text: "We had three different roofers tell us three different things. NexRoof came out, gave us a straight answer, and fixed the storm damage the right way using impact-resistant shingles. No runaround, no surprises on the bill. Five stars without hesitation.",
     rating: 5
   }
 ]
