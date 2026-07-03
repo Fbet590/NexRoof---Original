@@ -53,7 +53,16 @@ const galleryImages: GalleryItem[] = [
     city: "Clearwater, FL"
   },
   {
-    src: "/images/gallery-4.jpg",
+    src: [
+      "/images/gallery-leak-4a.png",
+      "/images/gallery-leak-4b.png",
+      "/images/gallery-leak-4c.png",
+      "/images/gallery-leak-4d.png",
+      "/images/gallery-leak-4e.png",
+      "/images/gallery-leak-4f.png",
+      "/images/gallery-leak-4g.png",
+      "/images/gallery-leak-4h.png",
+    ],
     alt: "Leak repair and roof restoration with corrected flashing and full inspection",
     title: "Leak Repair & Roof Restoration",
     description: "Diagnosed and repaired a multi-year leak with corrected flashing and full inspection.",
