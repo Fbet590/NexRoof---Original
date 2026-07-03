@@ -141,6 +141,64 @@ function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void
   )
 }
 
+function Lightbox({
+  item,
+  onClose,
+  onPrev,
+  onNext,
+}: {
+  item: GalleryItem
+  onClose: () => void
+  onPrev: () => void
+  onNext: () => void
+}) {
+  const slides = Array.isArray(item.src) ? item.src : [item.src]
+  const firstSlide = slides[0]
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        className="absolute top-4 right-4 text-background hover:text-background/80 transition-colors"
+        onClick={onClose}
+        aria-label="Close lightbox"
+      >
+        <X className="w-8 h-8" />
+      </button>
+
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-background hover:text-background/80 transition-colors"
+        onClick={(e) => { e.stopPropagation(); onPrev() }}
+        aria-label="Previous project"
+      >
+        <ChevronLeft className="w-10 h-10" />
+      </button>
+
+      <div
+        className="relative max-w-4xl max-h-[80vh] w-full aspect-[4/3]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image
+          src={firstSlide}
+          alt={item.alt}
+          fill
+          className="object-contain"
+        />
+      </div>
+
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-background hover:text-background/80 transition-colors"
+        onClick={(e) => { e.stopPropagation(); onNext() }}
+        aria-label="Next project"
+      >
+        <ChevronRight className="w-10 h-10" />
+      </button>
+    </div>
+  )
+}
+
 export function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
@@ -148,16 +206,18 @@ export function Gallery() {
   const closeLightbox = () => setSelectedIndex(null)
 
   const goToPrevious = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex(selectedIndex === 0 ? galleryImages.length - 1 : selectedIndex - 1)
-    }
+    setSelectedIndex((prev) =>
+      prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1
+    )
   }
 
   const goToNext = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex(selectedIndex === galleryImages.length - 1 ? 0 : selectedIndex + 1)
-    }
+    setSelectedIndex((prev) =>
+      prev === null ? null : prev === galleryImages.length - 1 ? 0 : prev + 1
+    )
   }
+
+  const selectedItem = selectedIndex !== null ? galleryImages[selectedIndex] : null
 
   return (
     <section className="py-20 bg-muted">
@@ -178,54 +238,14 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Lightbox */}
-      {selectedIndex !== null && (() => {
-        const item = galleryImages[selectedIndex]
-        const slides = Array.isArray(item.src) ? item.src : [item.src]
-        const firstSlide = slides[0]
-        return (
-          <div
-            className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
-            onClick={closeLightbox}
-          >
-            <button
-              className="absolute top-4 right-4 text-background hover:text-background/80 transition-colors"
-              onClick={closeLightbox}
-              aria-label="Close lightbox"
-            >
-              <X className="w-8 h-8" />
-            </button>
-
-            <button
-              className="absolute left-4 text-background hover:text-background/80 transition-colors"
-              onClick={(e) => { e.stopPropagation(); goToPrevious() }}
-              aria-label="Previous project"
-            >
-              <ChevronLeft className="w-10 h-10" />
-            </button>
-
-            <div
-              className="relative max-w-4xl max-h-[80vh] w-full aspect-[4/3]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={firstSlide}
-                alt={item.alt}
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <button
-              className="absolute right-4 text-background hover:text-background/80 transition-colors"
-              onClick={(e) => { e.stopPropagation(); goToNext() }}
-              aria-label="Next project"
-            >
-              <ChevronRight className="w-10 h-10" />
-            </button>
-          </div>
-        )
-      })()}
+      {selectedItem !== null && (
+        <Lightbox
+          item={selectedItem}
+          onClose={closeLightbox}
+          onPrev={goToPrevious}
+          onNext={goToNext}
+        />
+      )}
     </section>
   )
 }
