@@ -69,7 +69,11 @@ const galleryImages: GalleryItem[] = [
     city: "Riverview, FL"
   },
   {
-    src: "/images/gallery-5.jpg",
+    src: [
+      "/images/gallery-hurricane-5a.png",
+      "/images/gallery-hurricane-5b.png",
+      "/images/gallery-hurricane-5c.png",
+    ],
     alt: "Hurricane-resistant reroof with architectural shingles rated for high-wind Florida climates",
     title: "Hurricane-Resistant Reroof",
     description: "Full replacement with architectural shingles rated for high-wind Florida climates.",
