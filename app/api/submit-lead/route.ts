@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const LEAD_CONNECTOR_URL = 'https://services.leadconnectorhq.com/hooks/BeUlVEJ51v3ouGOJkSk6/webhook-trigger/PLAba6GRLQgi6ysCLCW7'
+const LEAD_CONNECTOR_URL = 'https://services.leadconnectorhq.com/hooks/HvRg0mcpt7255xUMWAiF/webhook-trigger/bb283e85-233e-45f1-aa28-78601ef657ba'
 const ZAPIER_URL = 'https://hooks.zapier.com/hooks/catch/24750736/43sdrbu/'
 
 async function sendWithRetry(url: string, payload: object, retries = 3): Promise<void> {
