@@ -39,7 +39,12 @@ const galleryImages: GalleryItem[] = [
     city: "Brandon, FL"
   },
   {
-    src: "/images/gallery-3.jpg",
+    src: [
+      "/images/gallery-tearoff-3a.webp",
+      "/images/gallery-tearoff-3b.webp",
+      "/images/gallery-tearoff-3c.webp",
+      "/images/gallery-tearoff-3d.webp",
+    ],
     alt: "Complete tear-off and reroof with Class 4 impact-resistant shingles and new underlayment",
     title: "Complete Tear-Off & Reroof",
     description: "18-year-old roof replaced with Class 4 impact-resistant shingles and new underlayment.",
