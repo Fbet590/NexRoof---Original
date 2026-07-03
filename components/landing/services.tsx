@@ -27,7 +27,7 @@ export function Services() {
           <p className="text-primary font-semibold mb-2">
             Ready to Protect Your Home?
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl font-black text-foreground mb-4">
             Our Expert Roofing Services
           </h2>
           <Button 

@@ -71,7 +71,7 @@ export function Testimonials() {
           <p className="text-primary font-semibold mb-2">
             Don&apos;t Just Take Our Word For It...
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl font-black text-foreground">
             Here&apos;s What Our Past Clients Had To Say
           </h2>
         </div>
