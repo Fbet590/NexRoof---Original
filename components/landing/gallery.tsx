@@ -40,10 +40,12 @@ const galleryImages: GalleryItem[] = [
   },
   {
     src: [
-      "/images/gallery-tearoff-3a.webp",
-      "/images/gallery-tearoff-3b.webp",
-      "/images/gallery-tearoff-3c.webp",
-      "/images/gallery-tearoff-3d.webp",
+      "/images/gallery-tearoff-3a.png",
+      "/images/gallery-tearoff-3b.png",
+      "/images/gallery-tearoff-3c.png",
+      "/images/gallery-tearoff-3d.png",
+      "/images/gallery-tearoff-3e.png",
+      "/images/gallery-tearoff-3f.png",
     ],
     alt: "Complete tear-off and reroof with Class 4 impact-resistant shingles and new underlayment",
     title: "Complete Tear-Off & Reroof",
