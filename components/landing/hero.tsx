@@ -36,7 +36,7 @@ export function Hero() {
           size="lg" 
           onClick={scrollToForm}
           className="text-primary-foreground text-xl px-8 py-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-          style={{ backgroundColor: '#526184' }}
+          style={{ backgroundColor: '#21A8CA' }}
         >
           Start Your Free Estimate
         </Button>

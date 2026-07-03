@@ -76,7 +76,7 @@ export function Stats() {
             size="lg" 
             onClick={scrollToForm}
             className="text-primary-foreground px-8 py-6 text-lg font-semibold"
-            style={{ backgroundColor: '#526184' }}
+            style={{ backgroundColor: '#21A8CA' }}
           >
             Claim Your Free Estimate
           </Button>
