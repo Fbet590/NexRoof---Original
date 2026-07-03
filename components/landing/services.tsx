@@ -6,12 +6,12 @@ const services = [
   {
     title: "Full Roof Replacement",
     description: "Get a brand-new roof built with top-tier, 160MPH wind-rated materials and expert craftsmanship, installed on our flat $10K price with no surprise costs.",
-    image: "/images/kitchen-service.jpg"
+    image: "/images/service-full-replacement.png"
   },
   {
     title: "Roof Repair",
     description: "From storm damage to persistent leaks, we diagnose the real problem and fix it right the first time — fast, honest, and fairly priced.",
-    image: "/images/bathroom-service.jpg"
+    image: "/images/service-roof-repair.png"
   }
 ]
 

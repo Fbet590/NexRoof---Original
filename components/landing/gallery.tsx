@@ -79,13 +79,7 @@ const galleryImages: GalleryItem[] = [
     description: "Full replacement with architectural shingles rated for high-wind Florida climates.",
     city: "Wesley Chapel, FL"
   },
-  {
-    src: "/images/gallery-6.jpg",
-    alt: "Flat roof section replacement with premium materials and professional finish",
-    title: "Flat Roof Section Replacement",
-    description: "Aging flat roof section replaced with premium materials and clean, professional finish.",
-    city: "Land O' Lakes, FL"
-  }
+
 ]
 
 function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void }) {
