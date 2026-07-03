@@ -62,17 +62,7 @@ export function Services() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-primary font-semibold mb-2">
-            Ready to Upgrade Your Roof?
-          </p>
-          <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Our Expert Roofing Services
-          </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Our expert team is ready to handle roofs of all sizes and complexities, always ensuring meticulous craftsmanship, clear communication, and results that exceed your expectations.
-          </p>
-        </div>
+
       </div>
     </section>
   )
