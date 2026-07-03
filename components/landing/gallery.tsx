@@ -40,10 +40,12 @@ const galleryImages: GalleryItem[] = [
   },
   {
     src: [
-      "/images/gallery-tearoff-3a.webp",
-      "/images/gallery-tearoff-3b.webp",
-      "/images/gallery-tearoff-3c.webp",
-      "/images/gallery-tearoff-3d.webp",
+      "/images/gallery-tearoff-3a.png",
+      "/images/gallery-tearoff-3b.png",
+      "/images/gallery-tearoff-3c.png",
+      "/images/gallery-tearoff-3d.png",
+      "/images/gallery-tearoff-3e.png",
+      "/images/gallery-tearoff-3f.png",
     ],
     alt: "Complete tear-off and reroof with Class 4 impact-resistant shingles and new underlayment",
     title: "Complete Tear-Off & Reroof",
@@ -51,26 +53,33 @@ const galleryImages: GalleryItem[] = [
     city: "Clearwater, FL"
   },
   {
-    src: "/images/gallery-4.jpg",
+    src: [
+      "/images/gallery-leak-4a.png",
+      "/images/gallery-leak-4b.png",
+      "/images/gallery-leak-4c.png",
+      "/images/gallery-leak-4d.png",
+      "/images/gallery-leak-4e.png",
+      "/images/gallery-leak-4f.png",
+      "/images/gallery-leak-4g.png",
+      "/images/gallery-leak-4h.png",
+    ],
     alt: "Leak repair and roof restoration with corrected flashing and full inspection",
     title: "Leak Repair & Roof Restoration",
     description: "Diagnosed and repaired a multi-year leak with corrected flashing and full inspection.",
     city: "Riverview, FL"
   },
   {
-    src: "/images/gallery-5.jpg",
+    src: [
+      "/images/gallery-hurricane-5a.png",
+      "/images/gallery-hurricane-5b.png",
+      "/images/gallery-hurricane-5c.png",
+    ],
     alt: "Hurricane-resistant reroof with architectural shingles rated for high-wind Florida climates",
     title: "Hurricane-Resistant Reroof",
     description: "Full replacement with architectural shingles rated for high-wind Florida climates.",
     city: "Wesley Chapel, FL"
   },
-  {
-    src: "/images/gallery-6.jpg",
-    alt: "Flat roof section replacement with premium materials and professional finish",
-    title: "Flat Roof Section Replacement",
-    description: "Aging flat roof section replaced with premium materials and clean, professional finish.",
-    city: "Land O' Lakes, FL"
-  }
+
 ]
 
 function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void }) {
