@@ -51,7 +51,7 @@ export function Services() {
                 style={{ backgroundImage: `url('${service.image}')` }}
               />
               <div className="p-6">
-                <h3 className="font-serif text-2xl font-bold text-card-foreground mb-3">
+                <h3 className="font-[family-name:var(--font-poppins)] text-2xl font-bold text-card-foreground mb-3">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">

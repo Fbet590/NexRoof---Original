@@ -126,7 +126,7 @@ function GalleryCard({ image, onOpen }: { image: GalleryItem; onOpen: () => void
       </div>
 
       <div className="p-4">
-        <h3 className="font-serif font-semibold text-lg text-card-foreground mb-1">
+        <h3 className="font-[family-name:var(--font-poppins)] font-black text-lg text-card-foreground mb-1">
           {image.title}
         </h3>
         <p className="text-muted-foreground text-sm mb-2 leading-relaxed">

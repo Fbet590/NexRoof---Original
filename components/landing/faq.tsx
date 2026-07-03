@@ -27,7 +27,7 @@ export function FAQ() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl font-black text-foreground">
             FAQs
           </h2>
         </div>
