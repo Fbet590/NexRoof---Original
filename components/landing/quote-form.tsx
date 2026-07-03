@@ -144,6 +144,12 @@ export function QuoteForm() {
       event_id: eventId
     }
 
+    // Renters are not qualified leads — they still get the thank-you message,
+    // but they are filtered out on the backend and not tracked as a conversion.
+    const isRenter =
+      typeof formData.homeowner === 'string' &&
+      formData.homeowner.toLowerCase().includes('renter')
+
     // Send data to server-side API route which forwards to webhook
     try {
       await fetch('/api/submit-lead', {
@@ -157,12 +163,13 @@ export function QuoteForm() {
       console.error('Webhook error:', error)
     }
 
-    // Fire Facebook Pixel Lead conversion event with event_id for deduplication
-    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    // Fire Facebook Pixel Lead conversion event with event_id for deduplication.
+    // Skip for renters so they are not counted as a lead/conversion.
+    if (!isRenter && typeof window !== 'undefined' && typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {}, { eventID: eventId })
     }
     
-    // Redirect to thank you page
+    // Redirect to thank you page (everyone sees the thank-you message)
     router.push('/thank-you')
   }
 
